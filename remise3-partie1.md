@@ -4,7 +4,7 @@
  - Sarah-Maude Gagné
 
 ## Sujet choisi
-Angular 18
+Angular 18 & Laravel
 
 
 # Lien GitHub
