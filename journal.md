@@ -32,13 +32,15 @@
     Comprendre pourquoi composer n’était pas reconnu dans PowerShell et comment l'installer correctement sur Windows.
 
     Apprendre la structure de base des projets Angular.
-    
+
 | Difficultés rencontrés:
     La commande composer n’était pas reconnue dans PowerShell.
 
     Incertitude sur l’endroit où exécuter les commandes (dossier parent, projet frontend vs backend).
 
     Confusion initiale sur les prérequis pour Laravel (versions PHP, extensions, installation adéquate).
+
+    Confusion pour les questions demandés lors de l'installation de Angular.
 
 | Objectif pour la semaine prochaine:
     Finaliser la création du projet Laravel maintenant que Composer est installé.
