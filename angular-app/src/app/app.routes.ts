@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { AproposComponent } from './apropos/apropos.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-  { path: 'apropos', component: AproposComponent, data: { debug: 'Navigating to AproposComponent' } },
-  { path: '', redirectTo: 'apropos', pathMatch: 'full' }
+  { path: '', component: HomeComponent },
+  { path: 'apropos', component: AproposComponent }
 ];

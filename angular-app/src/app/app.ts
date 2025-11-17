@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.html',
-  styleUrls: ['./app.css'],
+  styleUrls: ['./app.css']
 })
 export class App {
   title() {
@@ -16,4 +18,8 @@ export class App {
   onLinkClick() {
     console.log('Link clicked');
   }
+
+  // ← Déclare ici la propriété 'items'
+  items = ['À propos'];
 }
+
