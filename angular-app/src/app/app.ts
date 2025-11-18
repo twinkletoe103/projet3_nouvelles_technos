@@ -12,7 +12,7 @@ import { routes } from './app.routes';
 })
 export class App {
   title() {
-    return 'Your App Title';
+    return 'Projet 3 - Nouvelles technologies';
   }
 
   onLinkClick() {
