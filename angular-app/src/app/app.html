@@ -200,11 +200,9 @@
     <div class="divider" role="separator" aria-label="Divider" style="width: 2px; margin-right: 5px;"></div>
     <div class="right-side" style="margin-left: 10px;">
       <div class="pill-group">
-        <div *ngFor="let item of items">
-          <a class="pill" routerLink="/apropos" routerLinkActive="active" tabindex="0" (click)="onLinkClick()">
-            À propos
-          </a>
-        </div>
+        <a class="pill" routerLink="/apropos" routerLinkActive="active" tabindex="0" (click)="onLinkClick()">
+          À propos
+        </a>
       </div>
       <div class="social-links">
         <a
