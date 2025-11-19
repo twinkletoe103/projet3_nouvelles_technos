@@ -1,6 +1,7 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { AproposComponent } from './apropos/apropos.component';
+import { NavbarComponent } from './components/navbar/navbar';
 
 export const appConfig: ApplicationConfig = {
   providers: [
