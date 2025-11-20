@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-
-a {
-  cursor: pointer;
-  text-decoration: underline;
-  color: blue;
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
