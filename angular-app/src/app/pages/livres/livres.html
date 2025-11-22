@@ -1,0 +1,29 @@
+<h1>Liste des livres</h1>
+
+<div *ngIf="loading">
+  Chargement des livres...
+</div>
+
+<table *ngIf="!loading" border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titre</th>
+      <th>Auteur</th>
+      <th>Catégorie</th>
+      <th>Année</th>
+      <th>Quantité</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let livre of livres">
+      <td>{{ livre.id }}</td>
+      <td>{{ livre.titre }}</td>
+      <td>{{ livre.auteur }}</td>
+      <td>{{ livre.categorie }}</td>
+      <td>{{ livre.annee }}</td>
+      <td>{{ livre.quantite }}</td>
+    </tr>
+  </tbody>
+</table>
