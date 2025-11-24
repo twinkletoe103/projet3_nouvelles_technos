@@ -5,6 +5,16 @@
     <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a></li>
     <li><a routerLink="/livres" routerLinkActive="active">Livres</a></li>
     <li><a routerLink="/apropos" routerLinkActive="active">À propos</a></li>
+
+    <!-- Logged out -->
+    <li *ngIf="!isLoggedIn()"><a routerLink="/login" routerLinkActive="active">Connexion</a></li>
+    <li *ngIf="!isLoggedIn()"><a routerLink="/register" routerLinkActive="active">Inscription</a></li>
+
+    <!-- Logged in -->
+    <li *ngIf="isLoggedIn()" class="user-info">
+      Bonjour {{ getCurrentUser()?.name || 'Utilisateur' }}
+    </li>
+    <li *ngIf="isLoggedIn()"><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+    <li *ngIf="isLoggedIn()"><a (click)="logout()" style="cursor: pointer;">Déconnexion</a></li>
   </ul>
 </nav>
-
