@@ -1,29 +1,24 @@
-<h1>Liste des livres</h1>
+<h1 class="title">📚 Liste des livres</h1>
 
-<div *ngIf="loading">
-  Chargement des livres...
+<div *ngIf="loading" class="loading">
+  ⏳ Chargement des livres...
 </div>
 
-<table *ngIf="!loading" border="1" cellpadding="10">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Titre</th>
-      <th>Auteur</th>
-      <th>Catégorie</th>
-      <th>Année</th>
-      <th>Quantité</th>
-    </tr>
-  </thead>
+<div *ngIf="!loading" class="books-grid">
+  <div class="book-card" *ngFor="let livre of livres">
+    <div class="book-header">
+      <h2>{{ livre.titre }}</h2>
+      <span class="categorie">{{ livre.categorie || 'Non classé' }}</span>
+    </div>
 
-  <tbody>
-    <tr *ngFor="let livre of livres">
-      <td>{{ livre.id }}</td>
-      <td>{{ livre.titre }}</td>
-      <td>{{ livre.auteur }}</td>
-      <td>{{ livre.categorie }}</td>
-      <td>{{ livre.annee }}</td>
-      <td>{{ livre.quantite }}</td>
-    </tr>
-  </tbody>
-</table>
+    <p class="auteur">✍️ {{ livre.auteur }}</p>
+
+    <p class="details">
+      <strong>📅 Publication :</strong> {{ livre.date_publication }}<br>
+      <strong>📖 Pages :</strong> {{ livre.nombre_pages }}<br>
+      <strong>📦 Exemplaires :</strong> {{ livre.exemplaires }}
+    </p>
+
+    <button class="btn-details">Voir détails</button>
+  </div>
+</div>

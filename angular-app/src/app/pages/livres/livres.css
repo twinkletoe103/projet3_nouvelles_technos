@@ -1,0 +1,90 @@
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Grille responsive */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Carte d’un livre */
+.book-card {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 6px solid #4a90e2;
+}
+
+.book-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* En-tête */
+.book-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-header h2 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #34495e;
+}
+
+/* Catégorie */
+.categorie {
+  background: #4a90e2;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+/* Auteur */
+.auteur {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #555;
+}
+
+/* Détails */
+.details {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  color: #333;
+}
+
+/* Bouton */
+.btn-details {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.btn-details:hover {
+  background: #357ABD;
+}

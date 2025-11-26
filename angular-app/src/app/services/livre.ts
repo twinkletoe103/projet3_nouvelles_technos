@@ -6,9 +6,17 @@ export interface Livre {
   id: number;
   titre: string;
   auteur: string;
-  categorie: string;
-  annee: number;
-  quantite: number;
+  isbn: string;
+  date_publication: string;
+  editeur: string;
+  nombre_pages: number;
+  description?: string;
+  langue: string;
+  exemplaires: number;
+  categorie?: string;
+  couverture?: string | null;
+  created_at?: string;
+  updated_at?: string;
 }
 
 @Injectable({
