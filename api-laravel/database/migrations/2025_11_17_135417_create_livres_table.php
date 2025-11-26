@@ -24,6 +24,8 @@ return new class extends Migration
             $table->integer('exemplaires')->default(1);
             $table->string('categorie')->nullable();
             $table->string('couverture')->nullable();
+            $table->string('updated_at')->nullable();
+            $table->string('created_at')->nullable();
         });
     }
 
