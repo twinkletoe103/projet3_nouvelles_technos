@@ -44,7 +44,11 @@ export class RegisterComponent {
           alert('Compte créé avec succès !');
           this.router.navigate(['/login']);
         },
-        error: (err) => this.errorMessage = 'Erreur lors de la création du compte'
+        error: (err) => {
+          // Affiche un message d'erreur plus spécifique si le backend en fournit un.
+          this.errorMessage = err.error?.message || 'Erreur lors de la création du compte. Veuillez vérifier la console pour plus de détails.';
+          console.error('Erreur d\'inscription:', err); // Affiche l'objet d'erreur complet dans la console.
+        }
       });
     }
   }

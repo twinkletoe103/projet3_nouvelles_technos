@@ -7,6 +7,31 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+app-login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
 }
 
 app-root {
@@ -21,4 +46,5 @@ router-outlet {
 
 app-footer {
 }
+
 
