@@ -5,6 +5,7 @@ import { LivresComponent } from './pages/livres/livres';
 import { LoginComponent } from './auth/login/login';
 import { RegisterComponent } from './auth/register/register';
 import { DashboardComponent } from './dashboard/dashboard';
+import { EditProfileComponent } from './edit-profile/edit-profile';
 import { AuthGuard } from './auth/auth';
 
 export const routes: Routes = [
@@ -14,7 +15,7 @@ export const routes: Routes = [
   { path: 'livres', component: LivresComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  // Décommentez quand vous aurez le DashboardComponent
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'edit-profile', component: EditProfileComponent, canActivate: [AuthGuard] },
 ];
 

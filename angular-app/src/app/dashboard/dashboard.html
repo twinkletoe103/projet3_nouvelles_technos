@@ -1,1 +1,98 @@
-<p>dashboard works!</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+          <h1 *ngIf="isLoggedIn()" class="user-info">
+            Bonjour {{ getCurrentUser()?.name || 'Utilisateur' }}
+          </h1>
+        </div>
+
+        <div class="content">
+          <div class="section">
+            <div class="section-header">
+              <h2>Informations de compte</h2>
+              <button class="btn-edit" (click)="goToEditProfile()" *ngIf="user">
+                  Modifier mon compte
+              </button>
+            </div>
+
+            <div class="account-info-form" *ngIf="user">
+                <!-- Ligne 1 -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" [value]="user.id" readonly class="form-control-readonly">
+                    </div>
+                    <div class="form-group">
+                        <label>Type de compte</label>
+                        <input type="text" [value]="user.type" readonly class="form-control-readonly">
+                    </div>
+                </div>
+
+                <!-- Ligne 2 -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nom complet</label>
+                        <input type="text" [value]="user.name" readonly class="form-control-readonly">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" [value]="user.email" readonly class="form-control-readonly">
+                    </div>
+                </div>
+
+                <!-- Ligne 3 -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date de création</label>
+                        <input type="text" [value]="user.created_at | date:'dd/MM/yyyy à HH:mm'" readonly class="form-control-readonly">
+                    </div>
+                    <div class="form-group">
+                        <label>Dernière modification</label>
+                        <input type="text" [value]="user.updated_at | date:'dd/MM/yyyy à HH:mm'" readonly class="form-control-readonly">
+                    </div>
+                  </div>
+            </div>
+
+            <!-- Message si pas connecté -->
+            <div *ngIf="!user" class="alert alert-warning">
+                Aucune information de compte disponible. Veuillez vous connecter.
+            </div>
+        </div>
+
+            <div class="section">
+              <h2>Actions permises</h2>
+              <p>
+                  Selon votre compte {{ user?.type }}, différentes actions sont possibles :
+              </p>
+
+              <!-- Loading -->
+              <div *ngIf="loading" class="tech-item">
+                  <strong>Chargement...</strong>
+              </div>
+
+              <!-- Liste des droits avec descriptions -->
+              <div class="tech-list" *ngIf="!loading">
+                  <div class="tech-item" *ngFor="let droit of droits">
+                      <strong>{{ droit.nom }}</strong><br>
+                      <small class="text-muted">{{ droit.description }}</small>
+                  </div>
+
+                  <!-- Message si aucun droit -->
+                  <div class="tech-item" *ngIf="droits.length === 0">
+                      <strong>Aucun droit</strong><br>
+                      Aucun droit n'a été trouvé pour votre type d'utilisateur ({{ user?.type }})
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

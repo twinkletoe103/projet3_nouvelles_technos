@@ -17,6 +17,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'type' => 'nullable|string|max:255',
             'password' => 'required|string|min:6',
         ]);
 
@@ -26,9 +27,15 @@ class AuthController extends Controller
             ], 422);
         }
 
+        if ($request->type){
+            $type = $request->type;
+        } else {
+            $type = "Invite";
+        }
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'type' => $type,
             'password' => Hash::make($request->password),
         ]);
 

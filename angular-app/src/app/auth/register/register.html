@@ -39,6 +39,25 @@
       </div>
     </div>
 
+    <!-- Type -->
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select
+        id="type"
+        class="form-control"
+        formControlName="type"
+        [class.is-invalid]="registerForm.get('type')?.invalid && registerForm.get('type')?.touched"
+      >
+        <option value="Invite">Invité</option>
+        <option value="User">User</option>
+        <option value="Professeur">Professeur</option>
+        <option value="Étudiant">Étudiant</option>
+      </select>
+      <div class="text-danger" *ngIf="registerForm.get('type')?.invalid && registerForm.get('type')?.touched">
+        <small *ngIf="registerForm.get('type')?.errors?.['required']">Le type est requis</small>
+      </div>
+    </div>
+
     <!-- Mot de passe -->
     <div class="form-group">
       <label for="password">Mot de passe</label>

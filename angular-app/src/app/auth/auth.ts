@@ -30,7 +30,7 @@ export class AuthService {
   login(credentials: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, credentials).pipe(
       tap((response: any) => {
-        localStorage.setItem('token', response.token);
+        // localStorage.setItem('token', response.token);
         localStorage.setItem('currentUser', JSON.stringify(response.user));
         this.currentUserSubject.next(response.user);
       })
@@ -45,7 +45,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
+    return !!localStorage.getItem('currentUser');
   }
 
   getToken(): string | null {
@@ -54,6 +54,10 @@ export class AuthService {
 
   getCurrentUser(): any {
     return this.currentUserSubject.value;
+  }
+
+  getDroitsByType(type: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/droits/${type}`);
   }
 }
 
