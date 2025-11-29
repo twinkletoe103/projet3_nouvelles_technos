@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Livre {
@@ -30,5 +30,17 @@ export class LivreService {
 
   getLivres(): Observable<Livre[]> {
     return this.http.get<Livre[]>(this.apiUrl);
+  }
+
+  addLivre(livre: Partial<Livre>): Observable<any> {
+    const user = localStorage.getItem('currentUser');
+    const headers = new HttpHeaders({ 'X-User-Id': user ? JSON.parse(user).id : '' });
+    return this.http.post(this.apiUrl, livre, { headers });
+  }
+
+  deleteLivre(id: number): Observable<any> {
+    const user = localStorage.getItem('currentUser');
+    const headers = new HttpHeaders({ 'X-User-Id': user ? JSON.parse(user).id : '' });
+    return this.http.delete(`${this.apiUrl}/${id}`, { headers });
   }
 }

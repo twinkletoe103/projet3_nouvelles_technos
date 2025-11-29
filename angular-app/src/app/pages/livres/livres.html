@@ -4,6 +4,69 @@
   ⏳ Chargement des livres...
 </div>
 
+
+<!-- Formulaire d'ajout réservé aux professeurs -->
+<div *ngIf="!loading && isProf" class="add-form">
+  <h3>Ajouter un livre</h3>
+
+  <label>
+    ISBN :
+    <input [(ngModel)]="newIsbn" name="isbn" required />
+  </label>
+
+  <label>
+    Titre :
+    <input [(ngModel)]="newTitre" name="titre" required />
+  </label>
+
+  <label>
+    Auteur :
+    <input [(ngModel)]="newAuteur" name="auteur" required />
+  </label>
+
+  <label>
+    Date de publication :
+    <input type="date" [(ngModel)]="newDatePublication" name="date_publication" required />
+  </label>
+
+  <label>
+    Éditeur :
+    <input [(ngModel)]="newEditeur" name="editeur" required />
+  </label>
+
+  <label>
+    Nombre de pages :
+    <input type="number" [(ngModel)]="newNombrePages" name="nombre_pages" required min="1" />
+  </label>
+
+  <label>
+    Exemplaires :
+    <input type="number" [(ngModel)]="newExemplaires" name="exemplaires" min="1" />
+  </label>
+
+  <label>
+    Langue :
+    <input [(ngModel)]="newLangue" name="langue" placeholder="français" />
+  </label>
+
+  <label>
+    Catégorie :
+    <input [(ngModel)]="newCategorie" name="categorie" />
+  </label>
+
+  <label>
+    Description :
+    <textarea [(ngModel)]="newDescription" name="description"></textarea>
+  </label>
+
+  <label>
+    Couverture (URL) :
+    <input [(ngModel)]="newCouverture" name="couverture" />
+  </label>
+
+  <button (click)="addLivre()">Ajouter</button>
+</div>
+
 <div *ngIf="!loading" class="books-grid">
   <div class="book-card" *ngFor="let livre of livres">
     <div class="book-header">
@@ -20,5 +83,6 @@
     </p>
 
     <button class="btn-details">Voir détails</button>
+    <button *ngIf="isProf" class="btn-delete" (click)="deleteLivre(livre.id)">Supprimer</button>
   </div>
 </div>
