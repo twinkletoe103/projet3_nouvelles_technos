@@ -3,11 +3,11 @@
     <h2>Modifier mon compte</h2>
 
     <div class="alert alert-success" *ngIf="successMessage">
-      {{ successMessage }}
+      ✓ {{ successMessage }}
     </div>
 
     <div class="alert alert-danger" *ngIf="errorMessage">
-      {{ errorMessage }}
+      ✗ {{ errorMessage }}
     </div>
 
     <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
@@ -68,10 +68,11 @@
       </div>
 
       <div class="button-group">
-        <button type="submit" class="btn-primary" [disabled]="editForm.invalid">
-          Sauvegarder
+        <button type="submit" class="btn-primary" [disabled]="editForm.invalid || loading">
+          <span *ngIf="!loading">Sauvegarder</span>
+          <span *ngIf="loading">Sauvegarde en cours...</span>
         </button>
-        <button type="button" class="btn-secondary" (click)="cancel()">
+        <button type="button" class="btn-secondary" (click)="cancel()" [disabled]="loading">
           Annuler
         </button>
       </div>

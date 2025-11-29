@@ -59,6 +59,16 @@ export class AuthService {
   getDroitsByType(type: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/droits/${type}`);
   }
+
+  updateProfile(userId: number, userData: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/users/${userId}`, userData).pipe(
+      tap((response: any) => {
+        // Mettre à jour le localStorage et le BehaviorSubject
+        localStorage.setItem('currentUser', JSON.stringify(response.user));
+        this.currentUserSubject.next(response.user);
+      })
+    );
+  }
 }
 
 // ============= GUARD =============

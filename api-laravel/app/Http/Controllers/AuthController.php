@@ -84,4 +84,49 @@ class AuthController extends Controller
             'message' => 'Déconnexion réussie'
         ], 200);
     }
+
+    public function updateProfile(Request $request, $id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json([
+                'message' => 'Utilisateur non trouvé'
+            ], 404);
+        }
+
+        // Validation
+        $validator = Validator::make($request->all(), [
+            'name' => 'sometimes|required|string|max:255',
+            'email' => 'sometimes|required|string|email|max:255|unique:users,email,' . $id,
+            'password' => 'sometimes|nullable|string|min:6',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        // Mise à jour des champs
+        if ($request->has('name')) {
+            $user->name = $request->name;
+        }
+
+        if ($request->has('email')) {
+            $user->email = $request->email;
+        }
+
+        // Mise à jour du mot de passe uniquement s'il est fourni
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
+
+        return response()->json([
+            'message' => 'Profil mis à jour avec succès',
+            'user' => $user
+        ], 200);
+    }
 }
