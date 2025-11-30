@@ -16,6 +16,7 @@ export class LivresComponent implements OnInit {
   livres: Livre[] = [];
   loading = true;
   isProf = false;
+  isAdmin = false;
 
   // Champs du formulaire (une seule déclaration!)
   newIsbn: string = "";
@@ -35,6 +36,7 @@ export class LivresComponent implements OnInit {
   ngOnInit(): void {
     const user = this.authService.getCurrentUser();
     this.isProf = !!user && user.type && user.type.toLowerCase() === 'professeur';
+    this.isAdmin = !!user && user.type && user.type.toLowerCase() === 'admin';
 
     this.loadLivres();
   }

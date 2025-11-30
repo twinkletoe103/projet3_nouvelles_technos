@@ -1,0 +1,19 @@
+<h2>Modifier l'horaire de la bibliothèque</h2>
+
+<div *ngFor="let form of forms; let i = index">
+  <form [formGroup]="form" (ngSubmit)="updateHoraire(form)">
+    <label>{{ form.value.journee }}</label>
+
+    <input type="time" formControlName="heure_ouverture" placeholder="Heure ouverture">
+    <input type="time" formControlName="heure_fermeture" placeholder="Heure fermeture">
+
+    <label class="checkbox-label">
+      Ouvert :
+      <input type="checkbox" formControlName="ouvert">
+    </label>
+
+    <button type="submit">Enregistrer</button>
+  </form>
+</div>
+
+

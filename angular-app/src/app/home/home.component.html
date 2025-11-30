@@ -34,6 +34,26 @@
             </div>
 
             <div class="section">
+              <h2>Horaire de la bibliothèque</h2>
+
+              <div *ngFor="let h of horaires">
+                <span>
+                  {{ h.journee }} :
+                  <ng-container *ngIf="h.ouvert; else ferme">
+                    {{ h.heure_ouverture }} - {{ h.heure_fermeture }}
+                  </ng-container>
+                  <ng-template #ferme>Fermé</ng-template>
+                </span>
+              </div>
+
+              <div *ngIf="isAdmin" class="add-form">
+                <button class="btn-edit" (click)="goToEditHoraire()">
+                  Modifier l'horaire
+                </button>
+              </div>
+            </div>
+
+            <div class="section">
                 <h2>Contact</h2>
                 <p>
                     Pour toute question ou suggestion, contactez-nous à <strong>contact@bibliotheque-numerique.com</strong>.

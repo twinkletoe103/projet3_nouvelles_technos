@@ -55,7 +55,7 @@ class DroitUserSeeder extends Seeder
                 'type' => 'Admin',
                 'droits' => [
                     ['nom' => 'Voir mon profil', 'description' => 'Accéder à votre profil administrateur'],
-                    ['nom' => 'Réserver des livres', 'description' => 'Gérer et réserver toutes les ressources'],
+                    ['nom' => 'Ajouter des livres', 'description' => 'Ajouter des livres ou modifier des livres existants.'],
                     ['nom' => 'Voir l\'horaire de la bibliothèque', 'description' => 'Consulter et modifier les horaires'],
                     ['nom' => 'Consulter les cours', 'description' => 'Voir tous les cours de l\'établissement'],
                     ['nom' => 'Consulter tous les comptes', 'description' => 'Gérer tous les utilisateurs du système'],

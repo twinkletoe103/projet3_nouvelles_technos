@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LivreSeeder::class,
             DroitUserSeeder::class,
+            HoraireSeeder::class,
         ]);
 
         User::create([

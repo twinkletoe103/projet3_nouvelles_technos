@@ -32,7 +32,7 @@ export class LoginComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe({
-        next: () => this.router.navigate(['/livres']),
+        next: () => this.router.navigate(['/dashboard']),
         error: (err) => this.errorMessage = 'Email ou mot de passe incorrect'
       });
     }

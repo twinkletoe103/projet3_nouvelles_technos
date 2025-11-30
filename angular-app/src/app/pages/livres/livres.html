@@ -6,7 +6,7 @@
 
 
 <!-- Formulaire d'ajout réservé aux professeurs -->
-<div *ngIf="!loading && isProf" class="add-form">
+<div *ngIf="!loading && (isProf || isAdmin)" class="add-form">
   <h3>Ajouter un livre</h3>
 
   <label>

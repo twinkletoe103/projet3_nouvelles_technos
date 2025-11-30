@@ -6,6 +6,7 @@ use App\Http\Controllers\DroitController;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HoraireController;
 
 // Gestion utilisateur
 Route::post('/register', [AuthController::class, 'register']);
@@ -52,3 +53,6 @@ Route::delete('/livres/{id}', function(Request $request, $id) {
 	$controller = new LivreController();
 	return $controller->destroy($id);
 });
+
+// Gestion horaire
+Route::apiResource('horaires', HoraireController::class);
