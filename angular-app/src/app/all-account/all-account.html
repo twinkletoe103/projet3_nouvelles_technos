@@ -1,0 +1,24 @@
+<h1>Liste de tous les comptes</h1>
+
+<div *ngIf="loading" class="loading-message">Chargement…</div>
+
+<table *ngIf="!loading" class="accounts-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Type</th>
+      <th>Créé le</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of comptes">
+      <td>{{ c.id }}</td>
+      <td>{{ c.name }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.type }}</td>
+      <td>{{ c.created_at | date:'dd/MM/yyyy' }}</td>
+    </tr>
+  </tbody>
+</table>

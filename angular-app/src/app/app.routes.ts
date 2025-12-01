@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard';
 import { EditProfileComponent } from './edit-profile/edit-profile';
 import { AuthGuard } from './auth/auth';
 import { EditHoraireComponent } from './edit-horaire/edit-horaire';
+import { AllAccountComponent } from './all-account/all-account';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -19,5 +20,6 @@ export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'edit-profile', component: EditProfileComponent, canActivate: [AuthGuard] },
   { path: 'edit-horaire', component: EditHoraireComponent },
+  { path: 'all-account', component: AllAccountComponent, canActivate: [AuthGuard] },
 ];
 

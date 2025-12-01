@@ -14,6 +14,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 Route::put('/users/{id}', [AuthController::class, 'updateProfile']);
 Route::get('/droits/{type}', [DroitController::class, 'getDroitsByType']);
+Route::get('/accounts', [AuthController::class, 'getAllAccounts']);
 
 // Routes des livres
 Route::get('/livres', [LivreController::class, 'index']);

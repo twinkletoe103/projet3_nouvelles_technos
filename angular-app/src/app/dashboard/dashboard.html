@@ -91,6 +91,12 @@
                       Aucun droit n'a été trouvé pour votre type d'utilisateur ({{ user?.type }})
                   </div>
               </div>
+
+              <div *ngIf="isAdmin" class="add-form">
+                <button class="btn-edit" (click)="goToAllAccount()">
+                  Voir tous les comptes
+                </button>
+              </div>
             </div>
         </div>
     </div>

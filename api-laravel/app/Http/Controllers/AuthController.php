@@ -129,4 +129,16 @@ class AuthController extends Controller
             'user' => $user
         ], 200);
     }
+
+    /**
+     * Récupérer tous les comptes utilisateurs
+     */
+    public function getAllAccounts()
+    {
+        $users = User::select('id', 'name', 'email', 'type', 'created_at')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return response()->json($users, 200);
+    }
 }

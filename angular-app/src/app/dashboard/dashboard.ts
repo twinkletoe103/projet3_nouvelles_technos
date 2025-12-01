@@ -20,6 +20,7 @@ export class DashboardComponent {
   droits: Droit[] = [];
   user: any = null;
   loading: boolean = false;
+  isAdmin = false;
 
   constructor(
     private authService: AuthService,
@@ -28,6 +29,8 @@ export class DashboardComponent {
 
   ngOnInit(): void {
     this.user = this.getCurrentUser();
+    const user = this.authService.getCurrentUser();
+    this.isAdmin = !!user && user.type && user.type.toLowerCase() === 'admin';
     if (this.user?.type) {
       this.loadDroits();
     }
@@ -58,5 +61,9 @@ export class DashboardComponent {
 
   goToEditProfile(): void {
     this.router.navigate(['/edit-profile']);
+  }
+
+  goToAllAccount(): void {
+    this.router.navigate(['/all-account']);
   }
 }

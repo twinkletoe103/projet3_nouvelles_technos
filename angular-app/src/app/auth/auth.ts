@@ -69,6 +69,10 @@ export class AuthService {
       })
     );
   }
+
+  getAllAccounts(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/accounts`);
+  }
 }
 
 // ============= GUARD =============
