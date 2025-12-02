@@ -1,0 +1,7 @@
+<div class="library-status" [class.open]="isOpen" [class.closed]="!isOpen">
+  <span class="status-indicator"></span>
+  <span class="status-text">
+    La bibliothèque est présentement :
+    <strong>{{ isOpen ? 'OUVERTE' : 'FERMÉE' }}</strong>
+  </span>
+</div>
