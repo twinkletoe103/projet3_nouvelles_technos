@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { AproposComponent } from './apropos/apropos.component';
 import { HomeComponent } from './home/home.component';
 import { LivresComponent } from './pages/livres/livres';
+import { LivreDetailComponent } from './pages/livres/livre-detail';
 import { LoginComponent } from './auth/login/login';
 import { RegisterComponent } from './auth/register/register';
 import { DashboardComponent } from './dashboard/dashboard';
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'apropos', component: AproposComponent },
   { path: 'livres', component: LivresComponent },
+  { path: 'livres/:id', component: LivreDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },

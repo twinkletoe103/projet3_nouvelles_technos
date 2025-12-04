@@ -34,13 +34,13 @@ export class LivreService {
 
   addLivre(livre: Partial<Livre>): Observable<any> {
     const user = localStorage.getItem('currentUser');
-    const headers = new HttpHeaders({ 'X-User-Id': user ? JSON.parse(user).id : '' });
+    const headers = new HttpHeaders({ 'Id': user ? JSON.parse(user).id : '' });
     return this.http.post(this.apiUrl, livre, { headers });
   }
 
   deleteLivre(id: number): Observable<any> {
     const user = localStorage.getItem('currentUser');
-    const headers = new HttpHeaders({ 'X-User-Id': user ? JSON.parse(user).id : '' });
+    const headers = new HttpHeaders({ 'Id': user ? JSON.parse(user).id : '' });
     return this.http.delete(`${this.apiUrl}/${id}`, { headers });
   }
 }

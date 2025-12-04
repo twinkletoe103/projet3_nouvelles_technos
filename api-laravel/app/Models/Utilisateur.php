@@ -15,6 +15,8 @@ class Utilisateur extends Model
         'type',
     ];
 
+    public $timestamps = false;
+
     public function emprunts()
     {
         return $this->hasMany(Emprunt::class);

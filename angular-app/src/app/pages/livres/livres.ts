@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LivreService, Livre } from '../../services/livre';
+import { RouterLink } from '@angular/router';
 import { AuthService } from '../../auth/auth';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-livres',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './livres.html',
   styleUrls: ['./livres.css']
 })

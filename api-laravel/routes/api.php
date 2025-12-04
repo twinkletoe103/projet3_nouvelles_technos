@@ -21,7 +21,7 @@ Route::get('/livres', [LivreController::class, 'index']);
 
 // Création d'un livre (réservé aux professeurs)
 Route::post('/livres', function(Request $request) {
-	$userId = $request->header('X-User-Id');
+	$userId = $request->header('Id');
 	if (!$userId) {
 		return response()->json(['message' => 'User id missing'], 401);
 	}
@@ -39,7 +39,7 @@ Route::post('/livres', function(Request $request) {
 
 // Suppression d'un livre (réservé aux professeurs)
 Route::delete('/livres/{id}', function(Request $request, $id) {
-	$userId = $request->header('X-User-Id');
+	$userId = $request->header('Id');
 	if (!$userId) {
 		return response()->json(['message' => 'User id missing'], 401);
 	}
@@ -57,3 +57,24 @@ Route::delete('/livres/{id}', function(Request $request, $id) {
 
 // Gestion horaire
 Route::apiResource('horaires', HoraireController::class);
+
+// Emprunts (API)
+Route::post('/emprunts/{id}', function(Illuminate\Http\Request $request) {
+	$controller = new \App\Http\Controllers\EmpruntController();
+	return $controller->store($request, $id);
+});
+
+Route::get('/emprunts', function() {
+	$controller = new \App\Http\Controllers\EmpruntController();
+	return $controller->index();
+});
+
+Route::get('/emprunts/{id}', function($id) {
+	$controller = new \App\Http\Controllers\EmpruntController();
+	return $controller->show($id);
+});
+
+Route::post('/emprunts/{id}/retour', function($id) {
+	$controller = new \App\Http\Controllers\EmpruntController();
+	return $controller->retour($id);
+});
