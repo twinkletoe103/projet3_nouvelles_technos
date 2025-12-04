@@ -82,7 +82,7 @@
       <strong>📦 Exemplaires :</strong> {{ livre.exemplaires }}
     </p>
 
-    <button class="btn-details">Voir détails</button>
+    <a class="btn-details" [routerLink]="['/livres', livre.id]">Voir détails</a>
     <button *ngIf="isProf" class="btn-delete" (click)="deleteLivre(livre.id)">Supprimer</button>
   </div>
 </div>

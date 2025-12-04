@@ -8,13 +8,9 @@ use App\Models\User;
 
 class EnsureProfesseur
 {
-    /**
-     * Handle an incoming request.
-     * Expects header `X-User-Id` with the authenticated user's id.
-     */
     public function handle(Request $request, Closure $next)
     {
-        $userId = $request->header('X-User-Id');
+        $userId = $request->header('Id');
 
         if (!$userId) {
             return response()->json(['message' => 'User id missing'], 401);
@@ -25,7 +21,6 @@ class EnsureProfesseur
             return response()->json(['message' => 'Utilisateur non trouvé'], 401);
         }
 
-        // Accept both 'professeur' and 'Professeur'
         if (strtolower($user->type) !== 'professeur') {
             return response()->json(['message' => 'Accès réservé aux professeurs'], 403);
         }
