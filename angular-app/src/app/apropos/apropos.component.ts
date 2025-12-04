@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-apropos',
@@ -9,7 +10,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class AproposComponent {
-  constructor() {
-    console.log('AproposComponent loaded');
+  constructor(
+    private router: Router
+  ) {}
+
+  goToTechnologies(): void {
+    this.router.navigate(['/technologies']);
   }
 }

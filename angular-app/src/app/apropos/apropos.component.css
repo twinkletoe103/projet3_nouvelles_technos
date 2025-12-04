@@ -5,6 +5,21 @@
     box-sizing: border-box;
 }
 
+.btn-plus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;

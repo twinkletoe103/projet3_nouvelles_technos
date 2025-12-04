@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> À propos des technologies </title>
+      <link rel="stylesheet" href="technologies.css">
+  </head>
+  <body>
+    <h1>À propos des technologies que nous avons explorées</h1>
+    <div class="tech-list">
+      <div class="tech-item" (click)="toggleDescription('angular')">
+          <strong>Angular</strong><br>
+          Framework moderne pour applications web structurées et évolutives
+      </div>
+      <div class="tech-item" (click)="toggleDescription('api')">
+          <strong>API REST</strong><br>
+          Architecture pour la communication client-serveur
+      </div>
+      <div class="tech-item" (click)="toggleDescription('laravel')">
+          <strong>Laravel</strong><br>
+          Framework PHP pour le backend et la gestion de base de données
+      </div>
+      <div class="tech-item" (click)="toggleDescription('standalone')">
+          <strong>Composants Standalone</strong><br>
+          Nouvelle approche modulaire d'Angular 15+
+      </div>
+      <div class="tech-item" (click)="toggleDescription('responsive')">
+          <strong>Design Responsive</strong><br>
+          Interfaces adaptatives pour tous les appareils
+      </div>
+      <div class="tech-item" (click)="toggleDescription('git')">
+          <strong>Git & GitHub</strong><br>
+          Gestion de version et collaboration
+      </div>
+      <div class="tech-item" (click)="toggleDescription('node')">
+        <strong>Node.js</strong><br>
+        Environnement d'exécution JavaScript open-source
+      </div>
+    </div>
+    <div class="tech-description" [class.hidden]="hiddenDescriptions['angular']">
+      <div class="item">
+        <h3>Qu'est-ce que Angular ?</h3>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Framework Javascript <strong>complet</strong> </li>
+          <li> Architecture basée sur les composants</li>
+          <li> Inclut tout !
+            <ul class="second-list">
+              <li>Routing</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Forms</li>
+              <li>etc</li>
+            </ul>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Commandes de bases</h3>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Démarrage du serveur : <strong>ng serve</strong>  </li>
+          <li> Création de component : <strong> ng generate component <i>nom-du-component</i></strong>
+            <ul class="second-list">
+              <li><strong>--standalone</strong> : crée un componant standalone</li>
+              <li><strong>--skip-tests</strong> : ne crée pas le fichier de test</li>
+              <li><strong>--inline-template</strong> : ne crée pas de fichier .html, le template est dans .ts</li>
+              <li><strong>--inline-style</strong> : ne crée pas de fichier .css, le style est dans .ts</li>
+              <li><strong>--flat</strong> : ne crée pas de dossier pour le composant</li>
+            </ul>
+          <li> Création de service : <strong> ng generate service <i>nom-du-service</i></strong>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Composants et services, c'est quoi ?</h3>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Composants </li>
+            <ul class="second-list">
+              <li> Genre d'objet</li>
+              <li> Contient le .ts, .html, .css...</li>
+              <li> Modulaire et réutilisable</li>
+              <li> Communications avec d'autres composants</li>
+            </ul>
+        </ul>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Services </li>
+            <ul class="second-list">
+              <li> Classe réutilisable</li>
+              <li> Gère les appels API et la logique commune</li>
+              <li> Ajoutée via le constructeur</li>
+            </ul>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Standalone VS non-standalone</h3>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Non-standalone </li>
+            <ul class="second-list">
+              <li> Composants doivent être déclaré dans <strong>NgModule</strong></li>
+              <li> Ont besoin d'un fichier <strong>app.module.ts</strong></li>
+              <li> Dépendances gérées directement dans le module</li>
+            </ul>
+        </ul>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Standalone </li>
+            <ul class="second-list">
+              <li> Autonome, donc pas besoin de NgModule</li>
+              <li> Importent directement leurs propres dépendances</li>
+              <li> Simplifient l'architecture de l'application</li>
+              <li><strong>Résumé</strong> : n'a pas besoin d'être dans un module, peut fonctionner seul</li>
+            </ul>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Les différents fichiers</h3>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Fichier .ts </li>
+            <ul class="second-list">
+              <li> Sorte de controller</li>
+              <li> Gestion des propriétés</li>
+              <li> Gestion des méthodes</li>
+              <li> Communications avec d'autres composants</li>
+            </ul>
+        </ul>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Fichier .html </li>
+            <ul class="second-list">
+              <li> Fichier template</li>
+            </ul>
+        </ul>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Fichier .css </li>
+            <ul class="second-list">
+              <li> Fichier style</li>
+            </ul>
+        </ul>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Fichier .specs.ts </li>
+            <ul class="second-list">
+              <li> Fichier de tests unitaires</li>
+            </ul>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h2 style="color: black">En résumé : </h2>
+        <ol class="first-list"> <!-- ul>li*4 -->
+          <li> Création de component :
+            <ul class="second-list">
+              <li> <strong> ng generate component <i>name</i> --standalone</strong> </li>
+            </ul>
+          <li> Confirguration des fichiers :</li>
+            <ul class="second-list">
+              <li> name.ts </li>
+              <li> app.routes.ts </li>
+              <li> name.html </li>
+              <li> name.css </li>
+            </ul>
+        </ol>
+      </div>
+    </div>
+
+    <div class="tech-description" [class.hidden]="hiddenDescriptions['api']">
+      <div class="item">
+        <h3>Qu'est-ce que API REST ?</h3>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> <strong>REST</strong> : <i>Representational State Transfer</i></li>
+          <li> Architecture pour communication client-serveur</li>
+          <li> Utilise le protocole : <strong>HTTP</strong></li>
+          <li> Échange de données : <strong>JSON</strong></li>
+          <li> <strong>Stateless</strong> : <i>chaque requête est indépendante</i></li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Méthodes HTTP</h3>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> <strong>GET</strong> : récupérer des données</li>
+          <li> <strong>POST</strong> : créer une nouvelle ressource</li>
+          <li> <strong>PUT</strong> : mettre à jour une ressource complète</li>
+          <li> <strong>PATCH</strong> : mettre à jour partiellement une ressource</li>
+          <li> <strong>DELETE</strong> : supprimer une ressource</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Structure d'une URL REST</h3>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> <strong>Endpoint</strong> : l'URL d'accès à la ressource</li>
+          <li> Formats : <strong>/api/ressources</strong> ou <strong>/api/ressources/<i>id</i></strong> </li>
+          <li> Exemples : </li>
+            <ul class="second-list">
+              <li> <strong>GET api/users</strong> : liste tous les utilisateurs</li>
+              <li> <strong>GET /api/users/1</strong> : récupère l'utilisateur 1</li>
+              <li> <strong>POST api/users</strong> : crée un nouvel utilisateur</li>
+              <li> <strong>PUT /api/users/1</strong> : modifie l'utilisateur 1</li>
+              <li> <strong>DELETE /api/users/1</strong> : supprime l'utilisateur 1</li>
+            </ul>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Principes REST</h3>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> <strong>Client-serveur</strong> : séparation des responsabilités</li>
+          <li> <strong>Sans état</strong> : pas de session côté serveur</li>
+          <li> <strong>Cacheable</strong> : les réponses peuvent être mises en cache</li>
+          <li> <strong>Uniforme</strong> : utilisation standard des méthodes HTTP</li>
+          <li> <strong>Couches</strong> : architecture modulaire</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Dans Angular</h3>
+        <ul class="first-list"> <!-- ul>li*4 -->
+          <li> Utilise <strong>HttpClient</strong> pour faire des appels</li>
+          <li> Les requêtes retournent des <strong>Observables</strong></li>
+          <li> Gérées dans les <strong>services</strong></li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h2 style="color: black">En résumé : </h2>
+        <ol class="first-list"> <!-- ul>li*4 -->
+          <li> <strong>REST</strong> : architecture standardisée pour les APIs</li>
+          <li> Verbes <strong>HTTP</strong> pour les actions <strong>CRUD</strong></li>
+          <li> <strong>JSON</strong> pour l'échange de données</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="tech-description" [class.hidden]="hiddenDescriptions['laravel']">
+      <div class="item">
+        <h3>Qu'est-ce que Laravel ?</h3>
+        <ul class="first-list">
+          <li> Framework PHP </li>
+          <li> Architecture <strong>MVC</strong> (Model-View-Controller)</li>
+          <li> Inclut tout !
+            <ul class="second-list">
+              <li>Routing</li>
+              <li>Authentification</li>
+              <li>API</li>
+              <li>Base de données</li>
+              <li>etc</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>API REST avec Laravel</h3>
+        <ul class="first-list">
+          <li> Routes API
+            <ul class="second-list">
+              <li> Définies dans <strong>routes/api.php</strong></li>
+              <li> Retournent du <strong>JSON</strong></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Commandes de base</h3>
+        <ul class="first-list">
+          <li> Démarrage du serveur : <strong>php artisan serve</strong> </li>
+          <li> Création de controller : <strong>php artisan make:controller <i>NomController</i></strong>
+            <ul class="second-list">
+              <li><strong>--resource</strong> : crée un controller avec méthodes CRUD</li>
+              <li><strong>--api</strong> : crée un controller API (sans create/edit)</li>
+            </ul>
+          </li>
+          <li> Création de model : <strong>php artisan make:model <i>Nom</i></strong>
+            <ul class="second-list">
+              <li><strong>-m</strong> : crée aussi la migration</li>
+              <li><strong>-c</strong> : crée aussi le controller</li>
+              <li><strong>-mcr</strong> : crée model + migration + controller resource</li>
+            </ul>
+          </li>
+          <li> Création de migration : <strong>php artisan make:migration <i>create_table_name</i></strong> </li>
+          <li> Exécuter les migrations : <strong>php artisan migrate</strong> </li>
+          <ul class="second-list">
+            <li><strong>php artisan migrate:fresh</strong> : re-exécute toute la migration</li>
+            <li><strong>php artisan migrate:fresh</strong> : re-exécute toute la migration et lance les seeders</li>
+          </ul>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Architecture MVC</h3>
+        <ul class="first-list">
+          <li> Modèle
+            <ul class="second-list">
+              <li> Représente les données (table de base de données)</li>
+              <li> Situé dans <strong>app/Models/</strong></li>
+              <li> Gère les relations entre tables</li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="first-list">
+          <li> Vue
+            <ul class="second-list">
+              <li> Interface utilisateur HTML</li>
+              <li> Utilise <strong>Blade</strong></li>
+              <li> Situé dans <strong>resources/views/</strong></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="first-list">
+          <li> Contrôleur
+            <ul class="second-list">
+              <li> Logique de l'application</li>
+              <li> Fait le lien entre Model et View</li>
+              <li> Situé dans <strong>app/Http/Controllers/</strong></li>
+              <li> Traite les requêtes HTTP</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Controller API</h3>
+        <ul class="first-list">
+          <li> Pas de méthodes <strong>create()</strong> et <strong>edit()</strong></li>
+          <li> Méthodes principales :
+              <ul class="second-list">
+                <li><strong>index()</strong> : GET /api/users (liste)</li>
+                <li><strong>store()</strong> : POST /api/users (créer)</li>
+                <li><strong>show($id)</strong> : GET /api/users/<i>id</i> (afficher)</li>
+                <li><strong>update($id)</strong> : PUT/PATCH /api/users/<i>id</i> (modifier)</li>
+                <li><strong>destroy($id)</strong> : DELETE /api/users/<i>id</i> (supprimer)</li>
+              </ul>
+          </li>
+        </ul>
+        <h3>Validation</h3>
+        <ul class="first-list">
+          <li> Valider les données entrantes</li>
+          <li> Dans le controller avec <strong>validate()</strong></li>
+          <li> Form Request : <strong>php artisan make:request <i>NomRequest</i></strong></li>
+          <li> Règles courantes :
+            <ul class="second-list">
+              <li><strong>required</strong> : champ obligatoire</li>
+              <li><strong>email</strong> : format email valide</li>
+              <li><strong>unique:table</strong> : valeur unique dans la table</li>
+              <li><strong>min:x</strong> / <strong>max:x</strong> : longueur min/max</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Eloquent ORM (Object-Relational Mapping)</h3>
+        <ul class="first-list">
+          <li> Système pour interagir avec la base de données</li>
+          <li> Opérations principales :
+            <ul class="second-list">
+              <li><strong>all()</strong> : récupérer tous les enregistrements</li>
+              <li><strong>find($id)</strong> : trouver par ID</li>
+              <li><strong>where()</strong> : filtrer les résultats</li>
+              <li><strong>create()</strong> : créer un enregistrement</li>
+              <li><strong>update()</strong> : mettre à jour</li>
+              <li><strong>delete()</strong> : supprimer</li>
+            </ul>
+          </li>
+          <li> Relations :
+            <ul class="second-list">
+              <li><strong>hasMany()</strong> : un vers plusieurs</li>
+              <li><strong>belongsTo()</strong> : appartient à</li>
+              <li><strong>belongsToMany()</strong> : plusieurs vers plusieurs</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h2 style="color: black">En résumé : API REST Laravel</h2>
+        <ol class="first-list">
+          <li> Création d'une API complète :
+            <ul class="second-list">
+              <li> <strong>php artisan make:model <i>User</i> -mcr</strong></li>
+                <dl class="second-list">
+                  <dt> <i>(Model + Migration + Controller)</i></dt>
+                </dl>
+              <li> <strong>php artisan make:controller <i>UserController</i> --api</strong></li>
+                <dl class="second-list">
+                  <dt> <i>(juste controller API)</i></dt>
+                </dl>
+            </ul>
+          </li>
+          <li> Fichiers à configurer :
+            <ul class="second-list">
+              <li> <strong>routes/api.php</strong> : définir les routes</li>
+              <li> <strong>app/Models/User.php</strong> : définir le modèle</li>
+              <li> <strong>app/Http/Controllers/UserController.php</strong> : logique métier</li>
+              <li> <strong>database/migrations/</strong> : structure de la table</li>
+            </ul>
+          </li>
+          <li> Lancer l'API :
+            <ul class="second-list">
+              <li> <strong>php artisan migrate</strong> : créer les tables</li>
+              <li> <strong>php artisan serve</strong> : démarrer le serveur</li>
+              <li> Accès : <strong>http://localhost:8000/api/users</strong></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="tech-description" [class.hidden]="hiddenDescriptions['standalone']">
+      <div class="item">
+        <h3>Composants Standalone - Vue d'ensemble</h3>
+        <ul class="first-list">
+          <li> Approche <strong>moderne</strong> d'Angular (v14+)</li>
+          <li> <strong>Autonomes</strong> : pas besoin de NgModule</li>
+          <li> Simplifient l'architecture</li>
+          <li> <strong>Recommandés</strong> depuis Angular 15+</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Création</h3>
+        <ul class="first-list">
+          <li> Commande : <strong>ng generate component <i>nom</i> --standalone</strong></li>
+          <li> Ou version courte : <strong>ng g c <i>nom</i> --standalone</strong></li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Structure du fichier .ts</h3>
+        <ul class="first-list">
+          <li> Propriété <strong>standalone: true</strong> obligatoire</li>
+          <li> Imports directs dans le décorateur
+            <ul class="second-list">
+              <li>CommonModule (ngIf, ngFor, etc.)</li>
+              <li>FormsModule (ngModel)</li>
+              <li>RouterModule (routerLink)</li>
+              <li>Autres composants standalone</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Avantages VS Non-Standalone</h3>
+        <ul class="first-list">
+          <li> Moins de code boilerplate</li>
+          <li> Plus simple à comprendre</li>
+          <li> Meilleure optimisation (tree-shaking)</li>
+          <li> Lazy-loading facilité</li>
+          <li> Plus facile à tester</li>
+          <li> Pas besoin de app.module.ts</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Imports courants</h3>
+        <ul class="first-list">
+          <li> <strong>CommonModule</strong> : directives de base (ngIf, ngFor, ngClass, etc.)</li>
+          <li> <strong>FormsModule</strong> : formulaires template-driven (ngModel)</li>
+          <li> <strong>ReactiveFormsModule</strong> : formulaires réactifs</li>
+          <li> <strong>RouterModule</strong> : routing (routerLink, router-outlet)</li>
+          <li> <strong>HttpClientModule</strong> : requêtes HTTP (via provideHttpClient)</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Configuration du Routing</h3>
+        <ul class="first-list">
+          <li> Fichier : <strong>app.routes.ts</strong></li>
+          <li> Import direct du composant standalone</li>
+          <li> Pas besoin de module intermédiaire</li>
+          <li> Lazy-loading simplifié avec <strong>loadComponent</strong></li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Bootstrap de l'application</h3>
+        <ul class="first-list">
+          <li> Fichier : <strong>main.ts</strong></li>
+          <li> Utilise <strong>bootstrapApplication()</strong></li>
+          <li> Configuration dans <strong>app.config.ts</strong></li>
+          <li> Providers globaux (HttpClient, Router, etc.)</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Communication entre composants</h3>
+        <ul class="first-list">
+          <li> <strong>@Input()</strong> : recevoir des données du parent</li>
+          <li> <strong>@Output()</strong> : émettre des événements vers le parent</li>
+          <li> <strong>Services</strong> : partager des données (injectable dans standalone)</li>
+          <li> Pas de différence avec les non-standalone</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h2 style="color: black">En résumé</h2>
+        <ol class="first-list">
+          <li> Création :
+            <ul class="second-list">
+              <li> <strong>ng g c <i>nom</i> --standalone</strong></li>
+            </ul>
+          </li>
+          <li> Configuration essentielle :
+            <ul class="second-list">
+              <li> <strong>standalone: true</strong> dans @Component</li>
+              <li> <strong>imports: [...]</strong> pour les dépendances</li>
+              <li> <strong>app.routes.ts</strong> pour le routing</li>
+            </ul>
+          </li>
+          <li> Avantage principal :
+            <ul class="second-list">
+              <li> <strong>Simplicité</strong> : pas de NgModule à gérer</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="tech-description" [class.hidden]="hiddenDescriptions['responsive']">
+      Description détaillée du Design Responsive : approche de conception qui permet aux interfaces de s'adapter automatiquement à différentes tailles d'écran.
+    </div>
+    <div class="tech-description" [class.hidden]="hiddenDescriptions['git']">
+      Description détaillée de Git & GitHub : système de contrôle de version distribué et plateforme de collaboration pour développeurs.
+    </div>
+  </body>
+</html>
