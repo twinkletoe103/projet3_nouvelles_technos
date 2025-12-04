@@ -59,9 +59,9 @@ Route::delete('/livres/{id}', function(Request $request, $id) {
 Route::apiResource('horaires', HoraireController::class);
 
 // Emprunts (API)
-Route::post('/emprunts/{id}', function(Illuminate\Http\Request $request) {
-	$controller = new \App\Http\Controllers\EmpruntController();
-	return $controller->store($request, $id);
+Route::post('/empruntsStore/{id}', function(Illuminate\Http\Request $request, $id) {
+    $controller = new \App\Http\Controllers\EmpruntController();
+    return $controller->store($request, $id);
 });
 
 Route::get('/emprunts', function() {

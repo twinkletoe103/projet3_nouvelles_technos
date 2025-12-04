@@ -16,6 +16,8 @@ class Emprunt extends Model
         'statut',
     ];
 
+    public $timestamps = false;
+
     public function utilisateur()
     {
         return $this->belongsTo(Utilisateur::class);
