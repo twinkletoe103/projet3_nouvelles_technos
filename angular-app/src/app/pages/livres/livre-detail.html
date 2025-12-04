@@ -1,0 +1,17 @@
+<div *ngIf="loading" class="loading">⏳ Chargement...</div>
+
+<div *ngIf="!loading && livre" class="book-details">
+  <h1>{{ livre.titre }}</h1>
+
+  <p><strong>Auteur :</strong> {{ livre.auteur }}</p>
+  <p><strong>Éditeur :</strong> {{ livre.editeur || '—' }}</p>
+  <p><strong>Publication :</strong> {{ livre.date_publication || '—' }}</p>
+  <p><strong>Pages :</strong> {{ livre.nombre_pages || '—' }}</p>
+  <p><strong>Exemplaires disponibles :</strong> {{ livre.exemplaires }}</p>
+  <p><strong>Description :</strong> {{ livre.description || 'Aucune description' }}</p>
+
+  <button *ngIf="isEtudiant" class="btn-emprunt" (click)="emprunter()">Emprunter</button>
+  <a routerLink="/livres">← Retour à la liste</a>
+</div>
+
+<div *ngIf="!loading && !livre" class="loading">Livre non trouvé</div>
