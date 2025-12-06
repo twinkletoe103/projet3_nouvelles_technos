@@ -43,4 +43,10 @@ export class LivreService {
     const headers = new HttpHeaders({ 'Id': user ? JSON.parse(user).id : '' });
     return this.http.delete(`${this.apiUrl}/${id}`, { headers });
   }
+
+  updateLivre(id: number, payload: Partial<Livre>): Observable<any> {
+    const user = localStorage.getItem('currentUser');
+    const headers = new HttpHeaders({ 'Id': user ? JSON.parse(user).id : '' });
+    return this.http.put(`${this.apiUrl}/${id}`, payload, { headers });
+  }
 }

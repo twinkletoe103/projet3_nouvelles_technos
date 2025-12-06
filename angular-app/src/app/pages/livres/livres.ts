@@ -18,8 +18,9 @@ export class LivresComponent implements OnInit {
   loading = true;
   isProf = false;
   isAdmin = false;
+  showAddForm = false;
 
-  // Champs du formulaire (une seule déclaration!)
+  // Champs du formulaire
   newIsbn: string = "";
   newTitre: string = "";
   newAuteur: string = "";
@@ -40,6 +41,10 @@ export class LivresComponent implements OnInit {
     this.isAdmin = !!user && user.type && user.type.toLowerCase() === 'admin';
 
     this.loadLivres();
+  }
+
+  toggleAddForm(): void {
+    this.showAddForm = !this.showAddForm;
   }
 
   loadLivres(): void {
@@ -74,12 +79,15 @@ export class LivresComponent implements OnInit {
 
     this.livreService.addLivre(livre).subscribe({
       next: (res) => {
-        this.livres.push(res);
-        alert("📘 Livre ajouté !");
+        this.loadLivres();
+        this.showAddForm = false;
+        this.newIsbn = this.newTitre = this.newAuteur = this.newDatePublication = this.newEditeur = this.newCategorie = this.newDescription = this.newCouverture = '';
+        this.newNombrePages = this.newExemplaires = 1;
+        alert('📘 Livre ajouté !');
       },
       error: (err) => {
-        console.error("Erreur API :", err);
-        alert("Erreur lors de l'ajout.");
+        console.error('Erreur API :', err);
+        alert('Erreur lors de l\'ajout.');
       }
     });
   }

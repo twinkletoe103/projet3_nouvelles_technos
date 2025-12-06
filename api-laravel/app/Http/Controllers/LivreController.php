@@ -52,4 +52,30 @@ class LivreController extends Controller
         $livre->delete();
         return response()->json(['message' => 'Livre supprimé'], 200);
     }
+
+    public function update(Request $request, $id)
+    {
+        $livre = Livre::find($id);
+        if (!$livre) {
+            return response()->json(['message' => 'Livre non trouvé'], 404);
+        }
+
+        $validator = Validator::make($request->all(), [
+            'titre' => 'sometimes|required|string|max:255',
+            'auteur' => 'sometimes|required|string|max:255',
+            'exemplaires' => 'sometimes|required|integer|min:0',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        $livre->fill($request->only([
+            'titre', 'auteur', 'isbn', 'date_publication', 'editeur', 'nombre_pages', 'description', 'langue', 'exemplaires', 'categorie', 'couverture'
+        ]));
+
+        $livre->save();
+
+        return response()->json(['message' => 'Livre mis à jour', 'livre' => $livre], 200);
+    }
 }

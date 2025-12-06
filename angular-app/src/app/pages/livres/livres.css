@@ -15,8 +15,8 @@
 /* Grille responsive */
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
   padding: 10px;
 }
 
@@ -138,6 +138,7 @@
   cursor: pointer;
   font-weight: bold;
   width: 100%;
+  margin-top: 20px;
   transition: background 0.2s;
 }
 
@@ -161,4 +162,54 @@
 
 .btn-delete:hover {
   background: #c0392b;
+}
+
+.btn-edit {
+  background: #fdbc2f;
+  color: white;
+  border: none;
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.btn-edit:hover {
+  background: #d9a121;
+}
+
+.btn-delete, .btn-edit {
+  box-sizing: border-box;
+  border: none;
+}
+
+.add-form-toggle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Bouton toggle */
+.btn-toggle {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-left: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.2s, transform 0.1s;
+  box-sizing: border-box;
+}
+
+/* Hover */
+.btn-toggle:hover {
+  background: #2980b9;
 }

@@ -55,6 +55,24 @@ Route::delete('/livres/{id}', function(Request $request, $id) {
 	return $controller->destroy($id);
 });
 
+// Mise à jour d'un livre (réservé aux professeurs/admins)
+Route::put('/livres/{id}', function(Request $request, $id) {
+	$userId = $request->header('Id');
+	if (!$userId) {
+		return response()->json(['message' => 'User id missing'], 401);
+	}
+	$user = App\Models\User::find($userId);
+	$util = App\Models\Utilisateur::find($userId) ?? ($user ? App\Models\Utilisateur::where('email', $user->email)->first() : null);
+
+	$role = $util?->type ?? $user?->type ?? '';
+	if (!in_array(strtolower($role), ['professeur', 'admin'])) {
+		return response()->json(['message' => 'Accès réservé aux professeurs ou administrateurs'], 403);
+	}
+
+	$controller = new LivreController();
+	return $controller->update($request, $id);
+});
+
 // Gestion horaire
 Route::apiResource('horaires', HoraireController::class);
 

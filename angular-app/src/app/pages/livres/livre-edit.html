@@ -1,0 +1,33 @@
+<div *ngIf="loading" class="loading">⏳ Chargement...</div>
+
+<div *ngIf="!loading" class="edit-container">
+  <h1>Modifier le livre</h1>
+
+  <div class="form-group">
+    <label>Titre</label>
+    <input [(ngModel)]="livre.titre" />
+  </div>
+
+  <div class="form-group">
+    <label>Auteur</label>
+    <input [(ngModel)]="livre.auteur" />
+  </div>
+
+  <div class="form-group">
+    <label>ISBN</label>
+    <input [(ngModel)]="livre.isbn" />
+  </div>
+
+  <div class="form-group">
+    <label>Exemplaires</label>
+    <input type="number" [(ngModel)]="livre.exemplaires" min="0" />
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <textarea [(ngModel)]="livre.description"></textarea>
+  </div>
+
+  <button class="btn-save" (click)="save()">Enregistrer</button>
+  <a class="btn-cancel" routerLink="/livres">Annuler</a>
+</div>
