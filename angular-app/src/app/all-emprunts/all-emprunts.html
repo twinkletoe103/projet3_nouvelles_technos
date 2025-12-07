@@ -1,0 +1,30 @@
+<h1>Liste de tous les emprunts</h1>
+
+<div *ngIf="loading" class="loading-message">Chargement…</div>
+
+<table *ngIf="!loading" class="accounts-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Utilisateur</th>
+      <th>Email</th>
+      <th>Livre</th>
+      <th>ISBN</th>
+      <th>Date emprunt</th>
+      <th>Date retour</th>
+      <th>Statut</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of emprunts">
+      <td>{{ e.id }}</td>
+      <td>{{ e.utilisateur_nom }}</td>
+      <td>{{ e.utilisateur_email }}</td>
+      <td>{{ e.livre_titre }}</td>
+      <td>{{ e.livre_isbn }}</td>
+      <td>{{ e.date_emprunt | date:'dd/MM/yyyy' }}</td>
+      <td>{{ e.date_retour | date:'dd/MM/yyyy' }}</td>
+      <td>{{ e.statut }}</td>
+    </tr>
+  </tbody>
+</table>

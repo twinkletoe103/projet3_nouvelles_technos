@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HoraireController;
+use App\Http\Controllers\EmpruntController;
 
 // Gestion utilisateur
 Route::post('/register', [AuthController::class, 'register']);
@@ -18,6 +19,7 @@ Route::get('/accounts', [AuthController::class, 'getAllAccounts']);
 
 // Routes des livres
 Route::get('/livres', [LivreController::class, 'index']);
+Route::get('/all-emprunts', [EmpruntController::class, 'getAllEmprunts']);
 
 // Création d'un livre (réservé aux professeurs)
 Route::post('/livres', function(Request $request) {

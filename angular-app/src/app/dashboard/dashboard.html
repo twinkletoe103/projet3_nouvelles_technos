@@ -15,7 +15,7 @@
         </div>
 
         <div class="content">
-          <div class="section">
+          <div class="section" style="margin-bottom:40px;">
             <div class="section-header">
               <h2>Informations de compte</h2>
               <button class="btn-edit" (click)="goToEditProfile()" *ngIf="user">
@@ -95,6 +95,10 @@
               <div *ngIf="isAdmin" class="add-form">
                 <button class="btn-edit" (click)="goToAllAccount()">
                   Voir tous les comptes
+                </button>
+
+                <button class="btn-edit" (click)="goToAllEmprunts()">
+                  Voir tous les emprunts
                 </button>
               </div>
             </div>

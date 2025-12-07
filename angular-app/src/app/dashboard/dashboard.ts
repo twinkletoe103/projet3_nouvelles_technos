@@ -66,4 +66,8 @@ export class DashboardComponent {
   goToAllAccount(): void {
     this.router.navigate(['/all-account']);
   }
+
+  goToAllEmprunts(): void {
+    this.router.navigate(['/all-emprunts']);
+  }
 }

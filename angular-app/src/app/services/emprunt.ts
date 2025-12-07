@@ -44,4 +44,8 @@ export class EmpruntService {
 
     return this.http.get(apiUrl, { headers });
   }
+
+  getAllEmprunts(): Observable<any> {
+    return this.http.get(`${this.apiBaseUrl}/all-emprunts`);
+  }
 }

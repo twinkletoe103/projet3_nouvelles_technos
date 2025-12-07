@@ -20,11 +20,11 @@ class Emprunt extends Model
 
     public function utilisateur()
     {
-        return $this->belongsTo(Utilisateur::class);
+        return $this->belongsTo(User::class, 'utilisateur_id');
     }
 
     public function livre()
     {
-        return $this->belongsTo(Livre::class);
+        return $this->belongsTo(Livre::class, 'livre_id');
     }
 }

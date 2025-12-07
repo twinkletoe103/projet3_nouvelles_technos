@@ -1,0 +1,79 @@
+/* Style pour la page all-account */
+h1 {
+  color: #4a90e2;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  margin-left: 45px;
+  margin-right: 78px;
+  padding-left: 33px;
+}
+
+.accounts-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.accounts-table thead {
+  background: #4a90e2;
+  color: white;
+}
+
+.accounts-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.accounts-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  font-size: 14px;
+}
+
+.accounts-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.accounts-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.accounts-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Message de chargement */
+.loading-message {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accounts-table {
+    font-size: 12px;
+  }
+
+  .accounts-table th,
+  .accounts-table td {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}

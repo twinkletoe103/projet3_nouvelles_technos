@@ -77,4 +77,24 @@ class EmpruntController extends Controller
 
         return response()->json(['message' => 'Livre marqué comme retourné', 'emprunt' => $emprunt], 200);
     }
+
+    public function getAllEmprunts()
+    {
+        $emprunts = Emprunt::select(
+                'emprunts.id',
+                'emprunts.date_emprunt',
+                'emprunts.date_retour',
+                'emprunts.statut',
+                'users.name as utilisateur_nom',
+                'users.email as utilisateur_email',
+                'livres.titre as livre_titre',
+                'livres.isbn as livre_isbn'
+            )
+            ->join('users', 'users.id', '=', 'emprunts.utilisateur_id')
+            ->join('livres', 'livres.id', '=', 'emprunts.livre_id')
+            ->orderBy('emprunts.id', 'desc')
+            ->get();
+
+        return response()->json($emprunts, 200);
+    }
 }

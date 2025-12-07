@@ -12,6 +12,7 @@ import { AuthGuard } from './auth/auth';
 import { EditHoraireComponent } from './edit-horaire/edit-horaire';
 import { AllAccountComponent } from './all-account/all-account';
 import { TechnologiesComponent } from './technologies/technologies';
+import { AllEmpruntsComponent } from './all-emprunts/all-emprunts';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -27,5 +28,7 @@ export const routes: Routes = [
   { path: 'edit-horaire', component: EditHoraireComponent },
   { path: 'all-account', component: AllAccountComponent, canActivate: [AuthGuard] },
   { path: 'technologies', component: TechnologiesComponent },
+  { path: 'all-emprunts', component: AllEmpruntsComponent, canActivate: [AuthGuard] },
+
 ];
 

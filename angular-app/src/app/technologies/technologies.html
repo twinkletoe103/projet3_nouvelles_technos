@@ -516,13 +516,227 @@
     </div>
 
     <div class="tech-description" [class.hidden]="hiddenDescriptions['responsive']">
-      Description détaillée du Design Responsive : approche de conception qui permet aux interfaces de s'adapter automatiquement à différentes tailles d'écran.
+      <div class="item">
+        <h3>Responsive Design</h3>
+        <ul class="first-list">
+          <li>Approche <strong>adaptative</strong> pour tous les écrans</li>
+          <li><strong>Mobile-first</strong> : priorité aux petits écrans</li>
+          <li>Expérience utilisateur optimale</li>
+          <li><strong>Essentiel</strong> en développement moderne</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Media Queries</h3>
+        <ul class="first-list">
+          <li>Syntaxe : <strong>@media (condition) ...</strong></li>
+          <li>Breakpoints courants :
+            <ul class="second-list">
+              <li>Mobile : max-width: 768px</li>
+              <li>Tablette : 769px - 1024px</li>
+              <li>Desktop : min-width: 1025px</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>CSS Grid & Flexbox</h3>
+        <ul class="first-list">
+          <li><strong>Grid</strong> : layout en 2D (lignes + colonnes)</li>
+          <li><strong>Flexbox</strong> : layout en 1D (ligne ou colonne)</li>
+          <li>Auto-ajustement avec <strong>auto-fit/auto-fill</strong></li>
+          <li>Alignement facile avec <strong>justify-content</strong> et <strong>align-items</strong></li>
+        </ul>
+      </div>
     </div>
+
     <div class="tech-description" [class.hidden]="hiddenDescriptions['git']">
-      Description détaillée de Git & GitHub : système de contrôle de version distribué et plateforme de collaboration pour développeurs.
+      <div class="item">
+        <h3>Git & GitHub</h3>
+        <ul class="first-list">
+          <li><strong>Git</strong> : système de contrôle de version distribué</li>
+          <li><strong>GitHub</strong> : plateforme d'hébergement de code</li>
+          <li>Collaboration et suivi des modifications</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Commandes de base Git</h3>
+        <ul class="first-list">
+          <li><strong>git init</strong> : initialiser un dépôt</li>
+          <li><strong>git clone &lt;url&gt;</strong> : cloner un dépôt distant</li>
+          <li><strong>git status</strong> : voir l'état des fichiers</li>
+          <li><strong>git log</strong> : historique des commits</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Workflow de commit</h3>
+        <ul class="first-list">
+          <li><strong>git add .</strong> : ajouter tous les fichiers modifiés</li>
+          <li><strong>git commit -m "message"</strong> : créer un commit</li>
+          <li>Message descriptif et clair obligatoire</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Fonctionnalités GitHub</h3>
+        <ul class="first-list">
+          <li><strong>Pull Requests</strong> : proposer des modifications</li>
+          <li><strong>Issues</strong> : suivi des bugs et tâches</li>
+          <li><strong>Actions</strong> : CI/CD automatisé</li>
+          <li><strong>Pages</strong> : hébergement de sites statiques</li>
+          <li><strong>Fork</strong> : copier un dépôt pour contribuer</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Bonnes pratiques</h3>
+        <ul class="first-list">
+          <li>Commits <strong>fréquents</strong> et <strong>atomiques</strong></li>
+          <li>Messages clairs : "Ajoute feature X" ou "Corrige bug Y"</li>
+          <li>Utiliser <strong>.gitignore</strong> pour exclure fichiers inutiles</li>
+          <li>Brancher pour chaque nouvelle fonctionnalité</li>
+          <li>Pull avant de push pour éviter conflits</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h2 style="color: black">En résumé</h2>
+        <ol class="first-list">
+          <li>Workflow de base :
+            <ul class="second-list">
+              <li><strong>git add</strong> → <strong>git commit</strong> → <strong>git push</strong></li>
+              <li><strong>git pull</strong> pour synchroniser</li>
+            </ul>
+          </li>
+          <li>Collaboration :
+            <ul class="second-list">
+              <li><strong>Branches</strong> pour isoler le travail</li>
+              <li><strong>Pull Requests</strong> pour valider les changements</li>
+              <li><strong>Merge</strong> pour intégrer</li>
+            </ul>
+          </li>
+          <li>Avantage principal :
+            <ul class="second-list">
+              <li><strong>Historique complet</strong> et travail collaboratif efficace</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
     </div>
+
     <div class="tech-description" [class.hidden]="hiddenDescriptions['node']">
-      Description détaillée de Git & GitHub : système de contrôle de version distribué et plateforme de collaboration pour développeurs.
+      <div class="item">
+        <h3>Node.js</h3>
+        <ul class="first-list">
+          <li>Runtime <strong>JavaScript côté serveur</strong></li>
+          <li><strong>Non-bloquant</strong> et asynchrone</li>
+          <li>Écosystème riche avec <strong>npm</strong></li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Installation & Vérification</h3>
+        <ul class="first-list">
+          <li>Télécharger depuis <strong>nodejs.org</strong></li>
+          <li>Vérifier : <strong>node --version</strong> ou <strong>node -v</strong></li>
+          <li>npm inclus : <strong>npm --version</strong> ou <strong>npm -v</strong></li>
+          <li>Recommandé : version <strong>LTS</strong> (Long Term Support)</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>NPM - Node Package Manager</h3>
+        <ul class="first-list">
+          <li><strong>npm init</strong> : créer un package.json</li>
+          <li><strong>npm install &lt;package&gt;</strong> : installer un package</li>
+          <li><strong>npm install</strong> : installer toutes les dépendances</li>
+          <li><strong>npm uninstall &lt;package&gt;</strong> : désinstaller</li>
+          <li><strong>npm update</strong> : mettre à jour les packages</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Package.json</h3>
+        <ul class="first-list">
+          <li>Fichier de configuration du projet</li>
+          <li><strong>dependencies</strong> : packages de production</li>
+          <li><strong>devDependencies</strong> : packages de développement</li>
+          <li><strong>scripts</strong> : commandes personnalisées
+            <ul class="second-list">
+              <li>"start": "node app.js"</li>
+              <li>"dev": "nodemon app.js"</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Modules & Imports</h3>
+        <ul class="first-list">
+          <li><strong>CommonJS</strong> : const express = require('express')</li>
+          <li><strong>ES Modules</strong> : import express from 'express'</li>
+          <li>Modules natifs : fs, path, http, etc.</li>
+          <li><strong>module.exports</strong> pour exporter</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Frameworks populaires</h3>
+        <ul class="first-list">
+          <li><strong>Express.js</strong> : framework web minimaliste</li>
+          <li><strong>NestJS</strong> : framework structuré (TypeScript)</li>
+          <li><strong>Fastify</strong> : performant et moderne</li>
+          <li><strong>Koa</strong> : léger, par les créateurs d'Express</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Asynchrone & Callbacks</h3>
+        <ul class="first-list">
+          <li><strong>Callbacks</strong> : fonctions passées en paramètre</li>
+          <li><strong>Promises</strong> : .then() et .catch()</li>
+          <li><strong>Async/Await</strong> : syntaxe moderne et lisible</li>
+          <li>Event Loop pour la gestion non-bloquante</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Outils de développement</h3>
+        <ul class="first-list">
+          <li><strong>nodemon</strong> : redémarrage auto lors des modifications</li>
+          <li><strong>dotenv</strong> : gestion des variables d'environnement</li>
+          <li><strong>PM2</strong> : gestionnaire de processus en production</li>
+          <li><strong>ESLint</strong> : analyse statique du code</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h2 style="color: black">En résumé</h2>
+        <ol class="first-list">
+          <li>Démarrage :
+            <ul class="second-list">
+              <li><strong>npm init</strong> pour initialiser</li>
+              <li><strong>npm install</strong> pour les dépendances</li>
+              <li><strong>node app.js</strong> pour exécuter</li>
+            </ul>
+          </li>
+          <li>Concepts clés :
+            <ul class="second-list">
+              <li><strong>Asynchrone</strong> avec async/await</li>
+              <li><strong>Modules</strong> pour structurer le code</li>
+              <li><strong>npm</strong> pour gérer les packages</li>
+            </ul>
+          </li>
+          <li>Avantage principal :
+            <ul class="second-list">
+              <li><strong>JavaScript partout</strong> : front-end et back-end</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
     </div>
   </body>
 </html>
