@@ -31,3 +31,12 @@
 
 ### Frontend – Angular (`angular-app`)
 ### Backend – Laravel (`api-laravel`)
+
+##Commandes pour démarrer l'application
+- Ouvrir deux terminals
+- Dans le premier :
+  - cd angular-app
+  - ng serve
+- Dans le deuxième :
+  - cd api-Laravel
+  - php artisan serve 
