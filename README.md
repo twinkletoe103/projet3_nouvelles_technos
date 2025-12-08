@@ -32,7 +32,7 @@
 ### Frontend – Angular (`angular-app`)
 ### Backend – Laravel (`api-laravel`)
 
-##Commandes pour démarrer l'application
+## Commandes pour démarrer l'application
 - Ouvrir deux terminals
 - Dans le premier :
   - cd angular-app
